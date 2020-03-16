@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Shopping List Item</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <form>
+        <div>
+          <label>Enter Items</label>
+          <input type="text" id="item" autofocus />
+          <button class="btn waves-effect waves-light" type="submit">
+            Add Item
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <!-- <script type="module" src="electron.js"></script> -->
+    <script>
+      function submitForm(e) {
+        e.preventDefault();
+        item = document.querySelector('#item').value;
+        ipcRenderer.send('item:add', item);
+      }
+      const electron = require('electron');
+      const { ipcRenderer } = electron;
+      const form = document.querySelector('form');
+      const submitButton = form.querySelector('[type=Submit]');
+      form.addEventListener('submit', submitForm);
+    </script>
+  </body>
+</html>

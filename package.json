@@ -1,0 +1,26 @@
+{
+  "name": "shopping",
+  "version": "1.0.0",
+  "description": "Shopping List Desktop App in ElectronJS",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=assets/icons/mac/icon.icns --prune=true --out=release-builds",
+    "package-win": "electron-packager . electron-tutorial-app --overwrite --asar=true --platform=win32 --arch=ia64 --icon=assets/icons/win/icon.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"Shopping List\"",
+    "package-linux": "electron-packager . electron-tutorial-app --overwrite --asar=true --platform=linux --arch=x64 --icon=assets/icons/png/icon.png --prune=true --out=release-builds"
+  },
+  "author": "Tushar Kanjariya",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^8.1.1"
+  },
+  "files": [
+    "*.js",
+    "build",
+    "node_modules"
+  ],
+  "devDependencies": {
+    "electron-package": "^0.1.0",
+    "electron-packager": "^14.2.1"
+  }
+}
