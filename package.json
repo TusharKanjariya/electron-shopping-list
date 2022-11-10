@@ -12,7 +12,7 @@
   "author": "Tushar Kanjariya",
   "license": "ISC",
   "dependencies": {
-    "electron": "^8.1.1"
+    "electron": "^18.3.7"
   },
   "files": [
     "*.js",
